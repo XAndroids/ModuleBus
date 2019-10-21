@@ -8,5 +8,6 @@
 /captures
 /news
 *.iml
+.idea/
 
 local.properties
