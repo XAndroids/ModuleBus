@@ -2,10 +2,7 @@ package com.cangwang.modulebus.ExModule;
 
 import android.view.View;
 
-/**
- * Created by cangwang on 2017/6/15.
- */
-
+//FIXME 没有作用
 public interface IView {
     View getView();
     void show();

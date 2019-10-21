@@ -6,14 +6,15 @@
     <RelativeLayout
         android:id="@+id/layout_bottom"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></RelativeLayout>
+        android:layout_height="match_parent" />
 
     <RelativeLayout
         android:id="@+id/layout_top"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></RelativeLayout>
+        android:layout_height="match_parent" />
+
     <RelativeLayout
         android:id="@+id/layout_plugincenter"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></RelativeLayout>
+        android:layout_height="match_parent" />
 </FrameLayout>

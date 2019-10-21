@@ -5,9 +5,8 @@ import android.os.Bundle;
 import com.cangwang.core.cwmodule.ELModuleContext;
 
 /**
- * Created by cangwang on 2016/12/26.
+ * 模块抽象接口，每个模块都需要实现的接口回调方法
  */
-
 public abstract class ELAbsExModule {
 
     public abstract boolean init(ELModuleContext moduleContext,Bundle extend);

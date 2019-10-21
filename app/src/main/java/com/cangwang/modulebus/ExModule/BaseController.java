@@ -6,10 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * Created by cangwang on 2017/6/15.
- */
-
+//FIXME 没有作用
 public class BaseController implements IView{
     private Context context;
 

@@ -17,15 +17,13 @@ import com.cangwang.core.cwmodule.ELModuleContext;
 import com.cangwang.core.cwmodule.ex.ELBasicExModule;
 import com.cangwang.core.util.ModuleImpl;
 
-/**
- * Created by cangwang on 2016/12/28.
- */
-
 public class PageBodyExModule extends ELBasicExModule implements ModuleImpl{
     private View pageBodyView_fi;
     private View pageBodyView_se;
+
     private TextView pageBodyTop;
     private TextView pageBodyBottom;
+
     private Button changeNameBtn;
     private Button addTitle;
     private Button removeTitle;
@@ -43,13 +41,12 @@ public class PageBodyExModule extends ELBasicExModule implements ModuleImpl{
         pageBodyView_fi = LayoutInflater.from(context).inflate(R.layout.page_body_fi,parentTop,true);
         pageBodyTop = (TextView) pageBodyView_fi.findViewById(R.id.page_body_top);
 
-//        pageBodyView_se = LayoutInflater.from(context).inflate(R.layout.page_body_se,parentBottom,true);
-//        pageBodyBottom = (TextView) pageBodyView_se.findViewById(R.id.page_body_bottom);
         //动态添加布局
         pageBodyView_se = LayoutInflater.from(context).inflate(R.layout.page_body_se,null);
         RelativeLayout.LayoutParams rl = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        if (parentBottom!=null)
+        if (parentBottom!=null){
             parentBottom.addView(pageBodyView_se,rl);
+        }
 
         removeTitle = genericFindViewById(R.id.remove_title);
         addTitle = genericFindViewById(R.id.add_title);
@@ -73,7 +70,6 @@ public class PageBodyExModule extends ELBasicExModule implements ModuleImpl{
         changeNameBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                ModuleBus.getInstance().post(IBaseClient.class,"changeNameTxt","Cang_Wang");
                 context.startActivity(new Intent("com.cangwang.moduleExFg"));
             }
         });

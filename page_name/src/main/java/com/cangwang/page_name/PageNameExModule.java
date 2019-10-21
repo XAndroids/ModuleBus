@@ -3,9 +3,7 @@ package com.cangwang.page_name;
 import android.app.Application;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.cangwang.core.IBaseClient;
@@ -14,10 +12,6 @@ import com.cangwang.core.ModuleEvent;
 import com.cangwang.core.cwmodule.ELModuleContext;
 import com.cangwang.core.cwmodule.ex.ELBasicExModule;
 import com.cangwang.core.util.ModuleImpl;
-
-/**
- * Created by cangwang on 2017/6/15
- */
 
 public class PageNameExModule extends ELBasicExModule implements ModuleImpl{
     private View pageNameView;
@@ -33,7 +27,6 @@ public class PageNameExModule extends ELBasicExModule implements ModuleImpl{
     }
 
     private void initView(){
-//        pageNameView = LayoutInflater.from(context).inflate(R.layout.page_name_layout,parentTop,false);
         pageNameView = initLayout(R.layout.page_name_layout,parentTop);
         //一定需使用此方式初始化控件，不然无法隐藏或运行中移除控件
         pageTitle = genericFindViewById(R.id.page_title);

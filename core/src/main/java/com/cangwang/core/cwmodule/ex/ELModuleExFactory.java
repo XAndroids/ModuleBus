@@ -1,9 +1,8 @@
 package com.cangwang.core.cwmodule.ex;
 
 /**
- * Created by cangwang on 2017/6/16.
+ * 模块工厂，通过反射跨组件创建模块实例，并调用初始化相关方法
  */
-
 public class ELModuleExFactory {
 
     public static ELAbsExModule newModuleInstance(String name){

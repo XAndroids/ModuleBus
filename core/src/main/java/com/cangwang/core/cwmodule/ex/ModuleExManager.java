@@ -3,19 +3,19 @@ package com.cangwang.core.cwmodule.ex;
 import android.content.res.Configuration;
 import android.support.v4.util.ArrayMap;
 
-import com.cangwang.core.cwmodule.ELAbsModule;
 import com.cangwang.core.util.ModuleUtil;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by cangwang on 2016/12/26.
+ * 模块管理类，保存了模块现相关的信息，分发相关模块事件
  */
-
 public class ModuleExManager {
-    private List<String> modules = new ArrayList<>();   //模块名字
-    protected ArrayMap<String,ELAbsExModule> allModules = new ArrayMap<>();   //模块实体
+    //模块名字
+    private List<String> modules = new ArrayList<>();
+    //模块实体
+    protected ArrayMap<String,ELAbsExModule> allModules = new ArrayMap<>();
 
     public List<String> getModuleNames(){
         return modules;

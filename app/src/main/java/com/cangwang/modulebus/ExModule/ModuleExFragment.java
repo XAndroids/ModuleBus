@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by cangwang on 2017/6/15.
+ * 模块分发Fragment
  */
 public class ModuleExFragment extends ModuleManageExFragment {
     public static ModuleExFragment newInstance(){

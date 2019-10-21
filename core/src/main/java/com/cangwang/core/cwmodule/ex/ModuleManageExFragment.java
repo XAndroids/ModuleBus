@@ -27,9 +27,8 @@ import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 
 /**
- * Created by cangwang on 2017/6/15.
+ * 模块分发Fragment
  */
-
 public abstract class ModuleManageExFragment extends Fragment{
 
     private final String TAG = "ModuleManageExFragment";
@@ -48,8 +47,10 @@ public abstract class ModuleManageExFragment extends Fragment{
         mTopViewGroup = (ViewGroup) rootView.findViewById(R.id.layout_top);
         mBottomViewGroup = (ViewGroup) rootView.findViewById(R.id.layout_bottom);
         pluginViewGroup = (ViewGroup) rootView.findViewById(R.id.layout_plugincenter);
+
         moduleManager = new ModuleExManager();
         moduleManager.moduleConfig(moduleConfig());
+
         ModuleBus.getInstance().register(this);
         return rootView;
     }

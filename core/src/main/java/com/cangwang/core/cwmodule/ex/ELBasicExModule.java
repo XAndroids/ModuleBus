@@ -9,16 +9,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.cangwang.core.cwmodule.ELAbsModule;
 import com.cangwang.core.cwmodule.ELModuleContext;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by cangwang on 2016/12/26.
+ * Module基类，保存了每个模块都需要保存的信息和实现通用接口
  */
-
 public class ELBasicExModule extends ELAbsExModule{
     public Activity context;
     public FragmentActivity mContext;

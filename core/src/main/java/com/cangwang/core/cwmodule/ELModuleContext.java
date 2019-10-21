@@ -6,9 +6,8 @@ import android.support.v4.util.SparseArrayCompat;
 import android.view.ViewGroup;
 
 /**
- * Created by cangwang on 2016/12/26.
+ * 模块上下文，保存了每个模块需要保存的信息
  */
-
 public class ELModuleContext {
     public static final int TOP_VIEW_GROUP = 0;
     public static final int BOTTOM_VIEW_GROUP = 1;
