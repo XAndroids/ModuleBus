@@ -2,13 +2,16 @@ apply plugin: 'java'
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    //auto-service和javapoet库
     compile 'com.google.auto.service:auto-service:1.0-rc2'
     compile 'com.squareup:javapoet:1.7.0'
+    //自定义annotation库
     compile project(':annotation')
     compile 'org.apache.commons:commons-lang3:3.4'
     compile 'org.apache.commons:commons-collections4:4.1'
 }
 
+//Java基础环境
 sourceCompatibility = "1.7"
 targetCompatibility = "1.7"
 

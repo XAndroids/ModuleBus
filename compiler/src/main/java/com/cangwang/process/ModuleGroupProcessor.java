@@ -25,7 +25,9 @@ import javax.lang.model.element.Element;
 import javax.lang.model.element.Modifier;
 import javax.lang.model.element.TypeElement;
 import javax.lang.model.util.Elements;
-
+/**
+ * 读取ModuleGroup注解，生成Java代码文件
+ */
 public class ModuleGroupProcessor  {
 
     public static void parseModulesGroup(Set<? extends Element> modulesElements, Logger logger, Filer mFiler, Elements elements) throws IOException{

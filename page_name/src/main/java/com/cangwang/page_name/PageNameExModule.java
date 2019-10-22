@@ -16,9 +16,6 @@ import com.cangwang.core.cwmodule.ex.CWBasicExModule;
 import com.cangwang.core.util.ModuleImpl;
 import com.cangwang.enums.LayoutLevel;
 
-/**
- * Created by cangwang on 2017/6/15
- */
 @ModuleGroup({
         @ModuleUnit(templet = "top",layoutlevel = LayoutLevel.LOW),
         @ModuleUnit(templet = "normal",layoutlevel = LayoutLevel.VERY_LOW)

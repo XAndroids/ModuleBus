@@ -15,10 +15,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Module loading
- * Created by cangwang on 2017/9/4.
+ * 将所有模块的信息保存在模块列表中
  */
-
 public class ModuleCenter {
     private final static String TAG = "ModuleCenter";
 
@@ -27,7 +25,8 @@ public class ModuleCenter {
 
     public synchronized static void init(Context context){
         try {
-            List<String> classFileNames = ClassUtils.getFileNameByPackageName(context, ModuleUtil.NAME_OF_MODULEUNIT);  //获取指定ModuleUnit$$的类名的文件
+            //获取指定ModuleUnit$$的类名的文件
+            List<String> classFileNames = ClassUtils.getFileNameByPackageName(context, ModuleUtil.NAME_OF_MODULEUNIT);
             for (String className:classFileNames){
                 if (className.startsWith(ModuleUtil.ADDRESS_OF_MODULEUNIT)){
                     IModuleUnit iModuleUnit = (IModuleUnit)(Class.forName(className).getConstructor().newInstance());

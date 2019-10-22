@@ -3,23 +3,18 @@ package com.cangwang.model;
 import com.cangwang.annotation.ModuleUnit;
 import com.cangwang.enums.LayoutLevel;
 
-import javax.lang.model.element.Element;
-
 /**
- * 模块信息
- * Created by cangwang on 2017/9/1.
+ * 注解的模块信息要转化成模块信息实体
  */
-
 public class ModuleMeta {
-//    public Element rwaType;
     public String templet;
     public String moduleName;
     public String title;
     public LayoutLevel layoutlevel;
     public int extralevel;
 
+    //提供给编译时注解中使用
     public ModuleMeta(String templet,String moduleName,String title,int layoutlevel,int extralevel){
-//        this.rwaType = rawType;
         this.templet = templet;
         this.moduleName = moduleName;
         this.title = title;
@@ -38,18 +33,12 @@ public class ModuleMeta {
     }
 
     public ModuleMeta(ModuleUnit unit,String moduleName){
-//        this.rwaType = rawType;
         this.moduleName = moduleName;
         this.templet = unit.templet();
         this.layoutlevel = unit.layoutlevel();
         this.extralevel = unit.extralevel();
         this.title = unit.title();
     }
-
-//    public static ModuleMeta build(ModuleUnit unit, Element rawType){
-//        return  new ModuleMeta(unit,rawType);
-//    }
-
 
     @Override
     public String toString() {

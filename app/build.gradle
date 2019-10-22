@@ -49,6 +49,7 @@ dependencies {
     })
     compile 'com.android.support:design:25.0.1'
     compile 'com.android.support:appcompat-v7:25.0.1'
+    //配置编译时注解处理器
     annotationProcessor project(":compiler")
 
     if(project.ext.isLib) {

@@ -5,10 +5,6 @@ import android.os.Bundle;
 import android.support.v4.util.SparseArrayCompat;
 import android.view.ViewGroup;
 
-/**
- * Created by cangwang on 2016/12/26.
- */
-
 public class CWModuleContext {
     public static final int TOP_VIEW_GROUP = 0;
     public static final int BOTTOM_VIEW_GROUP = 1;

@@ -19,10 +19,6 @@ import com.cangwang.core.cwmodule.ex.CWBasicExModule;
 import com.cangwang.core.util.ModuleImpl;
 import com.cangwang.enums.LayoutLevel;
 
-/**
- * Created by cangwang on 2016/12/28.
- */
-
 @ModuleUnit(templet = "top",layoutlevel = LayoutLevel.LOW,extralevel = 11)
 public class PageBodyExModule extends CWBasicExModule implements ModuleImpl{
     private View pageBodyView_fi;

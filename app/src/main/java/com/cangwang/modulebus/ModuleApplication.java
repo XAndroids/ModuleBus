@@ -8,13 +8,6 @@ import com.cangwang.core.ModuleBus;
 import com.cangwang.core.util.ModuleImpl;
 import com.cangwang.modulebus.ExModule.PageExConfig;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-
-/**
- * Created by cangwang on 2017/2/25.
- */
-
 public class ModuleApplication extends Application{
     private static final String TAG="ModuleApplication";
 
@@ -27,6 +20,7 @@ public class ModuleApplication extends Application{
     @Override
     public void onCreate() {
         super.onCreate();
+
         long time = System.currentTimeMillis();
         for (String implName: PageExConfig.moduleCreate){
             try {

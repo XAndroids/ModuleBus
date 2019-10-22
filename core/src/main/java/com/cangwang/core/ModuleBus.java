@@ -13,9 +13,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * Created by zjl on 16/10/19.
- */
 public class ModuleBus {
     private static final String TAG = "ModuleBus";
 

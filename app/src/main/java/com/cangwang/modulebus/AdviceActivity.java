@@ -8,10 +8,6 @@ import android.view.WindowManager;
 
 import com.cangwang.modulebus.ExModule.ModuleMainExActivity;
 
-/**
- * Created by cangwang on 2017/2/26.
- */
-
 public class AdviceActivity extends AppCompatActivity{
     @Override
     public void onCreate(Bundle savedInstanceState) {

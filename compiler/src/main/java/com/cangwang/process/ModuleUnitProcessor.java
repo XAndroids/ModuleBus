@@ -28,8 +28,7 @@ import javax.lang.model.element.TypeElement;
 import javax.lang.model.util.Elements;
 
 /**
- * 注解
- * Created by cangwang on 2017/8/30.
+ * 读取ModuleUnit注解，生成Java代码文件
  */
 public class ModuleUnitProcessor {
 
