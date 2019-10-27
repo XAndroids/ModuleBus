@@ -7,7 +7,6 @@ import java.util.Random;
 /**颜色工具
  * Created by cangwang on 2018/2/5.
  */
-
 public class ColorUtil {
 
     public static int getRandomColor(){

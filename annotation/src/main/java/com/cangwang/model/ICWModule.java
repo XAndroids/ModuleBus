@@ -1,8 +1,7 @@
 package com.cangwang.model;
 
 /**
- * Created by cangwang on 2017/12/5.
+ * 模块接口
  */
-
 public interface ICWModule {
 }

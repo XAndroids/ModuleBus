@@ -10,20 +10,17 @@ import com.cangwang.core.cwmodule.ex.ModuleManageExActivity;
 import com.cangwang.modulebus.R;
 import com.cangwang.template.TemplateFragment;
 
-/**
- * Created by cangwang on 2017/6/15.
- */
-
-public class ModuleMainExActivity extends ModuleManageExActivity{
-
+public class ModuleMainExActivity extends ModuleManageExActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        if(this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE ){//横屏
+        if (Configuration.ORIENTATION_LANDSCAPE == getResources().getConfiguration().orientation) {
+            //横屏屏幕设置
             WindowManager.LayoutParams lp = getWindow().getAttributes();
             lp.flags |= WindowManager.LayoutParams.FLAG_FULLSCREEN;
             getWindow().setAttributes(lp);
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-        }else if( this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT ){//竖屏
+        } else if (Configuration.ORIENTATION_PORTRAIT == getResources().getConfiguration().orientation) {
+            //竖屏屏幕设置
             WindowManager.LayoutParams lp = getWindow().getAttributes();
             lp.flags &= (~WindowManager.LayoutParams.FLAG_FULLSCREEN);
             getWindow().setAttributes(lp);
@@ -31,16 +28,12 @@ public class ModuleMainExActivity extends ModuleManageExActivity{
         }
         super.onCreate(savedInstanceState);
         setBackGroundResouce(R.color.black);
-        ViewUtil.replaceFragment(this,R.id.layout_plugincenter,getSupportFragmentManager(),null,TemplateFragment.class,TemplateFragment.TAG);
-    }
-
-    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
+        ViewUtil.replaceFragment(this, R.id.layout_plugincenter, getSupportFragmentManager(), null, TemplateFragment.class, TemplateFragment.TAG);
     }
 
     @Override
     public String moduleConfig() {
+        //在外层Activity分发video组件
         return "video";
     }
 }

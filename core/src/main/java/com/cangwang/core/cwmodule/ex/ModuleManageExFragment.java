@@ -20,13 +20,9 @@ import com.cangwang.model.ICWModule;
 
 import java.util.List;
 
-/**
- * Created by cangwang on 2017/6/15.
- */
-
 public abstract class ModuleManageExFragment extends Fragment{
-
     private final String TAG = "ModuleManageExFragment";
+
     private ViewGroup mTopViewGroup;
     private ViewGroup mBottomViewGroup;
     private ViewGroup pluginViewGroup;
@@ -45,12 +41,17 @@ public abstract class ModuleManageExFragment extends Fragment{
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        mTopViewGroup = (ViewGroup) rootView.findViewById(R.id.layout_top);
-        mBottomViewGroup = (ViewGroup) rootView.findViewById(R.id.layout_bottom);
-        pluginViewGroup = (ViewGroup) rootView.findViewById(R.id.layout_plugincenter);
+        mTopViewGroup = rootView.findViewById(R.id.layout_top);
+        mBottomViewGroup = rootView.findViewById(R.id.layout_bottom);
+        pluginViewGroup = rootView.findViewById(R.id.layout_plugincenter);
+
         moduleManager = new ModuleExManager();
         moduleManager.moduleConfig(moduleConfig());
+
+        //FIXME 这个注册是？？？
         ModuleBus.getInstance().register(this);
+
+        //初始化模块分发上下文
         moduleContext = new CWModuleContext();
         moduleContext.setActivity(getActivity());
         moduleContext.setSaveInstance(savedInstanceState);
@@ -130,8 +131,6 @@ public abstract class ModuleManageExFragment extends Fragment{
 
     /**
      * 添加模块
-     * @param moduleName
-     * @param extend
      */
     @ModuleEvent(coreClientClass = IBaseClient.class)
     public void addModule(String moduleName,Bundle extend){
@@ -158,7 +157,6 @@ public abstract class ModuleManageExFragment extends Fragment{
 
     /**
      * 移除模块
-     * @param moduleName
      */
     @ModuleEvent(coreClientClass = IBaseClient.class)
     public void removeModule(String moduleName){

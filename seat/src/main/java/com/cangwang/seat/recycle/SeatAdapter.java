@@ -6,7 +6,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
 import com.cangwang.base.api.AnchorApi;
 import com.cangwang.base.ui.CircleImageView;
@@ -17,9 +16,6 @@ import com.cangwang.seat.bean.SeatInfo;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by cangwang on 2018/2/7.
- */
 
 public class SeatAdapter extends RecyclerView.Adapter<SeatAdapter.SeatHolder>{
 

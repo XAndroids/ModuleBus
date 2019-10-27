@@ -2,15 +2,14 @@ package com.cangwang.core.cwmodule.ex;
 
 import com.cangwang.model.IModuleFactory;
 
-/**
- * Created by cangwang on 2017/6/16.
- */
-
 public class CWModuleExFactory {
     private static final String FACTORY_PATH = "com.cangwang.core.ModuleCenterFactory";
 
     private static IModuleFactory instance;
 
+    /**
+     * 通过反射创建模块对象
+     */
     public static CWAbsExModule newModuleInstance(String name){
         if (name ==null || name.equals("")){
             return null;

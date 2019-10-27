@@ -8,17 +8,14 @@ import com.cangwang.annotation.ModuleUnit;
 import com.cangwang.base.api.BottomApi;
 import com.cangwang.base.api.GiftApi;
 import com.cangwang.base.api.SlideApi;
-import com.cangwang.base.api.SplashApi;
 import com.cangwang.base.ui.CircleImageView;
 import com.cangwang.core.ModuleApiManager;
 import com.cangwang.core.cwmodule.CWModuleContext;
-import com.cangwang.core.cwmodule.api.ModuleBackpress;
 import com.cangwang.core.cwmodule.ex.CWBasicExModule;
 import com.cangwang.enums.LayoutLevel;
 
 /**
  * 底部栏
- * Created by cangwang on 2018/2/10.
  */
 @ModuleGroup({
         @ModuleUnit(templet = "top",layoutlevel = LayoutLevel.LOW),
@@ -72,22 +69,11 @@ public class BottomModule extends CWBasicExModule implements BottomApi{
         giftBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                ModuleApiManager.getInstance().getApi(SplashApi.class).splash();
                 ModuleApiManager.getInstance().getApi(GiftApi.class).show();
             }
         });
     }
 
-//    @Override
-//    public boolean onBackPress() {
-//        if (ipM!=null && ipM.isVisible()){
-//            ipM.setVisible(false);
-//            if (bottomLayout.getVisibility() == View.GONE)
-//                bottomLayout.setVisibility(View.VISIBLE);
-//            return true;
-//        }
-//        return false;
-//    }
 
     @Override
     public void onDestroy() {

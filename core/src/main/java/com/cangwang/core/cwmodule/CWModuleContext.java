@@ -6,24 +6,28 @@ import android.support.v4.util.SparseArrayCompat;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
-import com.cangwang.core.cwmodule.api.ModuleBackpress;
-
-import java.util.Stack;
-
 /**
- * Created by cangwang on 2016/12/26.
+ * 模块上下文
  */
-
 public class CWModuleContext {
+    //上层视图标识
     public static final int TOP_VIEW_GROUP = 0;
+    //下层视图标识
     public static final int BOTTOM_VIEW_GROUP = 1;
+    //中间插件视图标识
     public static final int PLUGIN_CENTER_VIEW = 2;
 
+    //分发Activity上下文
     private FragmentActivity context;
+    //分发ActivityBundle
     private Bundle saveInstance;
-    private SparseArrayCompat<ViewGroup> viewGroups = new SparseArrayCompat<>();
-    private String templateName;
+    //分发LayoutInflater
     private LayoutInflater inflater;
+
+    //分发ViewGroup容器
+    private SparseArrayCompat<ViewGroup> viewGroups = new SparseArrayCompat<>();
+
+    private String templateName;
 
     public String getTemplateName() {
         return templateName;
@@ -48,20 +52,12 @@ public class CWModuleContext {
         inflater = LayoutInflater.from(context);
     }
 
-    public Bundle getSaveInstance(){
-        return saveInstance;
-    }
-
     public void setSaveInstance(Bundle saveInstance){
         this.saveInstance = saveInstance;
     }
 
     public ViewGroup getView(int key){
         return viewGroups.get(key);
-    }
-
-    public SparseArrayCompat<ViewGroup> getViewGroups(){
-        return viewGroups;
     }
 
     public void setViewGroups(SparseArrayCompat<ViewGroup> viewGroups){

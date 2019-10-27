@@ -19,7 +19,6 @@ import java.util.List;
 
 /**
  * 送礼流光
- * Created by cangwang on 2018/2/11.
  */
 @ModuleGroup({
         @ModuleUnit(templet = "top",layoutlevel = LayoutLevel.NORMAL),

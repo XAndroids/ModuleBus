@@ -2,7 +2,6 @@ package com.cangwang.core.util;
 
 import android.content.Context;
 import android.content.res.AssetManager;
-import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -12,10 +11,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Map;
-
-/**
- * Created by air on 2016/12/26.
- */
 
 public class ModuleUtil {
 
@@ -52,6 +47,9 @@ public class ModuleUtil {
         return null;
     }
 
+    /**
+     * 从本地文件获取Json对象
+     */
     public static JSONObject getAssetJsonObject(Context context, String jsonName){
         StringBuilder stringBuilder = new StringBuilder();
         try {

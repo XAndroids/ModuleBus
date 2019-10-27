@@ -13,10 +13,9 @@ import com.cangwang.chat.bean.ChatMessage;
 import java.util.ArrayList;
 import java.util.List;
 
-/**发言适配器
- * Created by cangwang on 2018/2/5.
+/**
+ * 发言适配器
  */
-
 public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ChatHolder>{
 
     private List<ChatMessage> list= new ArrayList<>();

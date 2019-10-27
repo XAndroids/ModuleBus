@@ -13,7 +13,6 @@ import android.widget.RadioGroup;
 
 import com.cangwang.annotation.ModuleUnit;
 import com.cangwang.base.api.GiftApi;
-import com.cangwang.base.api.SlideApi;
 import com.cangwang.base.api.SplashApi;
 import com.cangwang.core.ModuleApiManager;
 import com.cangwang.core.cwmodule.CWModuleContext;
@@ -28,7 +27,6 @@ import java.util.List;
 
 /**
  * 礼物模块
- * Created by canwang on 2018/2/24.
  */
 @ModuleUnit(templet = "top",layoutlevel = LayoutLevel.VERY_HIGHT)
 public class GiftModule extends CWBasicExModule implements GiftApi,ModuleBackpress{

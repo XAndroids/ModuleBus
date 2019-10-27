@@ -2,46 +2,17 @@ package com.cangwang.modulebus;
 
 import android.app.Application;
 import android.content.Context;
-import android.util.Log;
 
 import com.cangwang.core.ModuleBus;
-import com.cangwang.core.util.ModuleImpl;
-import com.cangwang.modulebus.ExModule.PageExConfig;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-
-/**
- * Created by cangwang on 2017/2/25.
- */
-public class ModuleApplication extends Application{
-    private static final String TAG="ModuleApplication";
+public class ModuleApplication extends Application {
 
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
+        //从本地初始化模块
+        //本地-从各个模块配置合并的json文件，读取配置，然后调用APT生成的相关源码初始化模块
+        //远程-？？
         ModuleBus.init(base);
-    }
-
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        long time = System.currentTimeMillis();
-        for (String implName: PageExConfig.moduleCreate){
-            try {
-                Class<?> clazz = Class.forName(implName);
-                if (clazz.newInstance() instanceof ModuleImpl){
-                    ModuleImpl impl = (ModuleImpl) clazz.newInstance();
-                    impl.onLoad(this);
-                }
-            }catch (ClassNotFoundException e){
-                e.printStackTrace();
-            }catch (IllegalAccessException e){
-                e.printStackTrace();
-            }catch (InstantiationException e){
-                e.printStackTrace();
-            }
-        }
-        Log.v(TAG,"interface load time = " +(System.currentTimeMillis()-time));
     }
 }

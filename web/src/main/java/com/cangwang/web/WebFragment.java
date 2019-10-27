@@ -30,9 +30,7 @@ import com.cangwang.core.ModuleApiManager;
 
 /**
  * 网页
- * Created by cangwang on 2018/2/6.
  */
-
 public class WebFragment extends Fragment{
     public static final String TAG="WebFragment";
     private WebView web;

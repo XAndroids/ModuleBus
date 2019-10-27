@@ -3,15 +3,12 @@ package com.cangwang.chat;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
-import android.view.View;
 
 import com.cangwang.annotation.ModuleGroup;
 import com.cangwang.annotation.ModuleUnit;
 import com.cangwang.base.api.ChatApi;
 import com.cangwang.chat.bean.ChatMessage;
 import com.cangwang.chat.recycle.ChatAdapter;
-import com.cangwang.core.ModuleApiManager;
 import com.cangwang.core.cwmodule.CWModuleContext;
 import com.cangwang.core.cwmodule.ex.CWBasicExModule;
 import com.cangwang.enums.LayoutLevel;
@@ -21,11 +18,10 @@ import java.util.List;
 
 /**
  * 发言模块
- * Created by cangwang on 2018/2/3.
  */
-@ModuleGroup({
-        @ModuleUnit(templet = "top",layoutlevel = LayoutLevel.LOW),
-})
+//@ModuleGroup({
+//        @ModuleUnit(templet = "top",layoutlevel = LayoutLevel.LOW),
+//})
 public class ChatModule extends CWBasicExModule implements ChatApi {
     private RecyclerView chatRecyle;
     private ChatAdapter adapter;

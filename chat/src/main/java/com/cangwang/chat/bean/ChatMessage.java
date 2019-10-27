@@ -3,8 +3,8 @@ package com.cangwang.chat.bean;
 import com.cangwang.base.util.ColorUtil;
 import com.cangwang.annotation.ModuleBean;
 
-/**发言条目
- * Created by cangwang on 2018/2/5.
+/**
+ * 发言条目
  */
 @ModuleBean
 public class ChatMessage {

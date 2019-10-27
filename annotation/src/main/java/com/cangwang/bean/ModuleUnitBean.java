@@ -1,9 +1,8 @@
 package com.cangwang.bean;
 
 /**
- * Created by cangwang on 2017/12/8.
+ * 模块配置
  */
-
 public class ModuleUnitBean implements Comparable{
     public String path;
     public String templet;

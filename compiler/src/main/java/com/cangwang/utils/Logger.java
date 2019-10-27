@@ -6,8 +6,7 @@ import javax.annotation.processing.Messager;
 import javax.tools.Diagnostic;
 
 /**
- *
- * Created by cangwang on 2017/8/30.
+ * 日志工具类
  */
 public class Logger {
     public static final String PROJECT = "ModuleBus";

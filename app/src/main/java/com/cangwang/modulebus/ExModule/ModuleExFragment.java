@@ -2,15 +2,10 @@ package com.cangwang.modulebus.ExModule;
 
 import android.os.Bundle;
 
-import com.cangwang.core.ModuleBus;
 import com.cangwang.core.cwmodule.ex.ModuleManageExFragment;
 
-import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by cangwang on 2017/6/15.
- */
 public class ModuleExFragment extends ModuleManageExFragment {
     public static ModuleExFragment newInstance(){
         ModuleExFragment fragment = new ModuleExFragment();

@@ -6,13 +6,14 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.view.ViewGroup;
 
 /**
- * Created by cangwang on 2018/2/6.
+ * View工具类
  */
-
 public class ViewUtil {
+    /**
+     * 替换Fragment
+     */
     public static Fragment replaceFragment(Activity act, int containerId, FragmentManager manager, Bundle bundle, Class<? extends Fragment> cls, String tag) {
         if (act == null || act.isFinishing()) return null;
         if (Build.VERSION.SDK_INT >= 17 && act.isDestroyed()) return null;
@@ -33,6 +34,9 @@ public class ViewUtil {
         return fragment;
     }
 
+    /**
+     * 移除Fragment
+     */
     public static Fragment removeFragment(Activity act, FragmentManager manager, String tag, boolean executePendingTransactions) {
         if (act == null || act.isFinishing()) return null;
         if (Build.VERSION.SDK_INT >= 17 && act.isDestroyed()) return null;
@@ -42,27 +46,29 @@ public class ViewUtil {
         if (fragment != null) {
             ft.remove(fragment).commitAllowingStateLoss();
         }
-        if (fragment != null&&executePendingTransactions)
+        if (fragment != null && executePendingTransactions)
             manager.executePendingTransactions();
         return fragment;
     }
 
-    public static void hide(FragmentManager manager,Fragment fm){
+    /**
+     * 隐藏Fragment
+     */
+    public static void hide(FragmentManager manager, Fragment fm) {
         FragmentTransaction transaction = manager.beginTransaction();  //Activity中
-        if(fm != null){
+        if (fm != null) {
             transaction.hide(fm);
         }
     }
 
-    public static void show(FragmentManager manager,Fragment fm){
+    /**
+     * 展示Fragment
+     */
+    public static void show(FragmentManager manager, Fragment fm) {
         FragmentTransaction transaction = manager.beginTransaction();  //Activity中
-        if(fm != null){
+        if (fm != null) {
             transaction.show(fm);
 
         }
     }
-
-//    public static Fragment addExFragment(Activity act, ViewGroup viewGroup, FragmentManager manager, Bundle bundle, Class<? extends Fragment> cls, String tag){
-//
-//    }
 }

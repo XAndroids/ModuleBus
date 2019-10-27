@@ -25,6 +25,7 @@ public class ModuleGroupProcessor  {
     public static JsonArray parseModulesGroup(Set<? extends Element> modulesElements, Logger logger, Filer mFiler, Elements elements) throws IOException{
         if (CollectionUtils.isNotEmpty(modulesElements)) {
             logger.info(">>> Found moduleGroup, size is " + modulesElements.size() + " <<<");
+            //FIXME 为啥使用ModuleUnitProcessor同样处理呢？？
             ModuleUnitProcessor.parseModuleFile(modulesElements,logger,mFiler,elements);
             for (Element element:modulesElements){
                 ModuleGroup group = element.getAnnotation(ModuleGroup.class);
@@ -35,6 +36,7 @@ public class ModuleGroupProcessor  {
         return null;
     }
 
+    //打印ModuleGroup
     public static JsonArray parseModules(ModuleUnit[] modulesElements,Element element,Logger logger,Filer mFiler,Elements elements) throws IOException {
         if (modulesElements.length > 0){
             logger.info(">>> Found moduleUnit, size is " + modulesElements.length + " <<<");

@@ -11,15 +11,11 @@ import com.cangwang.core.cwmodule.ex.CWBasicExModule;
 import com.cangwang.enums.LayoutLevel;
 import com.cangwang.lamp.view.HeartLayout;
 
-import java.util.HashMap;
 import java.util.Random;
 import java.util.Timer;
-import java.util.TimerTask;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * 氛围灯气泡
- * Created by cangwang on 2018/2/9.
  */
 @ModuleGroup({
         @ModuleUnit(templet = "top",layoutlevel = LayoutLevel.LOW),
@@ -39,17 +35,6 @@ public class LampModule extends CWBasicExModule{
     public void initView(){
         setContentView(R.layout.lamp_layout,parentBottom);
         mHeartLayout = findViewById(R.id.heart_layout);
-//        mTimer.scheduleAtFixedRate(new TimerTask() {
-//            @Override
-//            public void run() {
-//                mHeartLayout.post(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        mHeartLayout.addHeart(randomColor());
-//                    }
-//                });
-//            }
-//        }, 500, 200);
         setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

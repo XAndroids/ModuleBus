@@ -1,4 +1,3 @@
-//apply from: rootProject.getRootDir().getAbsolutePath() + "/common_config.gradle"
 apply from: "${rootProject.rootDir}/common_config.gradle"
 if(project.ext.isLib){
     apply plugin: 'com.android.library'
@@ -63,10 +62,6 @@ dependencies {
         embedded project(':page_view')
     }else{
         if (!project.ext.isDebug) {
-//            compile project(':page_body')
-//            compile project(':page_body_bt')
-//            compile project(':page_name')
-//            compile project(':page_view')
 //            compile project(':bottom')
 //            compile project(':chat')
 //            compile project(':anchor')

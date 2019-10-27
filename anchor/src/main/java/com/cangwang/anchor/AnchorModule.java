@@ -3,7 +3,6 @@ package com.cangwang.anchor;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -19,7 +18,6 @@ import com.cangwang.enums.LayoutLevel;
 
 /**
  * 信息页
- * Created by cangwang on 2018/2/6.
  */
 @ModuleGroup({
         @ModuleUnit(templet = "top",layoutlevel = LayoutLevel.HIGHT),
@@ -34,11 +32,15 @@ public class AnchorModule extends CWBasicExModule implements AnchorApi{
     public boolean onCreate(CWModuleContext moduleContext, Bundle extend) {
         super.onCreate(moduleContext, extend);
         initView();
+
+        //注册AnchorApi，用于其它组件跨组件调用
         ModuleApiManager.getInstance().putApi(AnchorApi.class,this);
+
         return true;
     }
 
     private void initView(){
+        //通过自身的RelativeLayout控制布局在页面中的位置
         setContentView(R.layout.anchor_title_layout,parentPlugin);
         anchorImg = findViewById(R.id.anchor_img);
         anchorName = findViewById(R.id.anchor_name);

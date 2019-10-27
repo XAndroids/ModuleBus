@@ -15,7 +15,6 @@ import com.cangwang.enums.LayoutLevel;
 
 /**
  * 侧边弹框
- * Created by canwang on 2018/2/10.
  */
 @ModuleUnit(templet = "top",layoutlevel = LayoutLevel.VERY_HIGHT)
 public class SlideModule extends CWBasicExModule implements SlideApi,ModuleBackpress{

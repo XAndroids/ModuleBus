@@ -15,30 +15,26 @@ import com.cangwang.template.adapter.TemplateAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-
 /**
- * 模板
- * Created by cangwang on 2018/2/12.
+ * 模板Fragment，完成子分发页面Viewpager逻辑
  */
-
-public class TemplateFragment extends Fragment{
+public class TemplateFragment extends Fragment {
     public static final String TAG = "TemplateFragment";
 
     private View view;
     private ViewPager vp;
     private FragmentPagerAdapter adapter;
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.template_layout,container,false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        view = inflater.inflate(R.layout.template_layout, container, false);
         return view;
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        vp = (ViewPager) view.findViewById(R.id.template_viewpager);
+        vp = view.findViewById(R.id.template_viewpager);
         initFragment();
         vp.setAdapter(adapter);
         vp.setCurrentItem(1);

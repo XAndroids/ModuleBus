@@ -7,9 +7,8 @@ import com.cangwang.core.cwmodule.CWModuleContext;
 import com.cangwang.model.ICWModule;
 
 /**
- * Created by cangwang on 2016/12/26.
+ * 抽象模块类
  */
-
 public abstract class CWAbsExModule implements ICWModule{
 
     public abstract boolean onCreate(CWModuleContext moduleContext, Bundle extend);

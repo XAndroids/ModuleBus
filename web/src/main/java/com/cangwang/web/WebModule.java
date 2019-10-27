@@ -2,7 +2,6 @@ package com.cangwang.web;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.view.View;
 
 import com.cangwang.annotation.ModuleUnit;
 import com.cangwang.base.api.WebApi;
@@ -15,7 +14,6 @@ import com.cangwang.enums.LayoutLevel;
 
 /**
  * 网页控制
- * Created by canwang on 2018/2/6.
  */
 @ModuleUnit(templet = "top",layoutlevel = LayoutLevel.VERY_HIGHT)
 public class WebModule extends CWBasicExModule implements WebApi,ModuleBackpress{
@@ -25,7 +23,6 @@ public class WebModule extends CWBasicExModule implements WebApi,ModuleBackpress
     @Override
     public boolean onCreate(CWModuleContext moduleContext, Bundle extend) {
         super.onCreate(moduleContext, extend);
-//        initView();
         registerMApi(WebApi.class,this);
         return true;
     }

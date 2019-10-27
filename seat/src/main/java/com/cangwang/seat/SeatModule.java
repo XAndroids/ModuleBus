@@ -15,8 +15,8 @@ import com.cangwang.seat.recycle.SeatAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-/**座位席模块
- * Created by cangwang on 2018/2/7.
+/**
+ * 座位席模块
  */
 @ModuleGroup({
         @ModuleUnit(templet = "top",layoutlevel = LayoutLevel.LOW),

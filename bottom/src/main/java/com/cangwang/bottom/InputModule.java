@@ -1,27 +1,22 @@
 package com.cangwang.bottom;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.KeyEvent;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.cangwang.annotation.ModuleUnit;
 import com.cangwang.base.api.BottomApi;
 import com.cangwang.base.api.ChatApi;
 import com.cangwang.core.ModuleApiManager;
 import com.cangwang.core.cwmodule.CWModuleContext;
 import com.cangwang.core.cwmodule.api.ModuleBackpress;
 import com.cangwang.core.cwmodule.ex.CWBasicExModule;
-import com.cangwang.enums.LayoutLevel;
 
-/**输入模块
- * Created by cangwang on 2018/2/5.
+/**
+ * 输入模块
  */
 
 //@ModuleUnit(templet = "top",layoutlevel = LayoutLevel.LOW)

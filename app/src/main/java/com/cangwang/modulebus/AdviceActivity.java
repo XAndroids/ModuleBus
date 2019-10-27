@@ -6,14 +6,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.cangwang.modulebus.ExModule.ModuleExActivity;
 import com.cangwang.modulebus.ExModule.ModuleMainExActivity;
 
 /**
  * 启动页
- * Created by cangwang on 2017/2/26.
  */
-
 public class AdviceActivity extends AppCompatActivity{
     @Override
     public void onCreate(Bundle savedInstanceState) {

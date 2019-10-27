@@ -21,9 +21,7 @@ import com.cangwang.core.ModuleApiManager;
 
 /**
  * 个人信息弹框
- * Created by cangwang on 2018/2/6.
  */
-
 public class AnchorDialog extends DialogFragment{
 
     private View rootView;
@@ -53,15 +51,16 @@ public class AnchorDialog extends DialogFragment{
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.anchor_dialog, container, false);
-        blogAdress = (TextView)rootView.findViewById(R.id.anchor_card_blog);
+        blogAdress = rootView.findViewById(R.id.anchor_card_blog);
         blogAdress.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //我靠，在这里调用Web模块
                 ModuleApiManager.getInstance().getApi(WebApi.class).loadWeb(blogAdress.getText().toString(),"Canwang主页");
                 dismiss();
             }
         });
-        closeBtn = (ImageView)rootView.findViewById(R.id.anchor_close);
+        closeBtn = rootView.findViewById(R.id.anchor_close);
         closeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
