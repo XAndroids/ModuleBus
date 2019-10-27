@@ -14,6 +14,7 @@ public class ModuleApplication extends Application{
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
+        //Module初始化
         ModuleBus.init(base);
     }
 

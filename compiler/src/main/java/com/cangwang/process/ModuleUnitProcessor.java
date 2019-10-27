@@ -80,6 +80,13 @@ public class ModuleUnitProcessor {
                 logger.info(">>> build moduleUnit,moduleMeta = " + moduleMeta.toString() + " <<<");
 
                 //构造java文件
+                //public class ModuleUnit$$PageBodyExModule implements IModuleUnit {
+                //    @Override
+                //   public void loadInto(List<ModuleMeta> metaSet) {
+                //        metaSet.add(new ModuleMeta("top","com.cangwang.page_body.PageBodyExModule","PageBodyExModule",400,11));
+                //    }
+                //}
+
                 JavaFile.builder(ModuleUtil.FACADE_PACKAGE,
                         TypeSpec.classBuilder(ModuleUtil.NAME_OF_MODULEUNIT+name.simpleName())
                                 .addJavadoc(ModuleUtil.WARNING_TIPS)

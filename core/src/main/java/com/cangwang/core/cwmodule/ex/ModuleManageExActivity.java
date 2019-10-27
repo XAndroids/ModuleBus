@@ -29,12 +29,16 @@ public abstract class ModuleManageExActivity extends AppCompatActivity{
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.module_rank_layout);
+
         ModuleBus.getInstance().register(this);
+
         mTopViewGroup = (ViewGroup) findViewById(R.id.layout_top);
         mBottomViewGroup = (ViewGroup) findViewById(R.id.layout_bottom);
         pluginViewGroup = (ViewGroup) findViewById(R.id.layout_plugincenter);
+
         moduleManager = new ModuleExManager();
         moduleManager.moduleConfig(moduleConfig());
+
         initView(savedInstanceState);
     }
 
@@ -49,11 +53,14 @@ public abstract class ModuleManageExActivity extends AppCompatActivity{
         sVerticalViews.put(CWModuleContext.PLUGIN_CENTER_VIEW, pluginViewGroup);
         moduleContext.setViewGroups(sVerticalViews);
 
+        //使用异步线程，反射创建模块
         for (final String moduleName:moduleManager.getModuleNames()){
             moduleManager.getPool().execute(new Runnable() {
                 @Override
                 public void run() {
                     final CWAbsExModule module = CWModuleExFactory.newModuleInstance(moduleName);
+
+                    //必须在UI线程中初始化，解析布局。可以使用RxJava来实现
                     if (module!=null){
                         moduleManager.getHandler().post(new Runnable() {
                             @Override

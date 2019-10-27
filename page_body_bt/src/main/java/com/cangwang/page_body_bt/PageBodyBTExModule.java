@@ -12,9 +12,6 @@ import com.cangwang.core.ModuleBus;
 import com.cangwang.core.cwmodule.CWModuleContext;
 import com.cangwang.core.cwmodule.ex.CWBasicExModule;
 
-/**
- * Created by cangwang on 2017/6/15.
- */
 @ModuleUnit()
 public class PageBodyBTExModule extends CWBasicExModule {
     private View pageBodyView_bt;

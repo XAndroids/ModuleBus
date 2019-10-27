@@ -25,7 +25,7 @@ public class ModuleCenter {
 
     public synchronized static void init(Context context){
         try {
-            //获取指定ModuleUnit$$的类名的文件
+            //获取指定ModuleUnit$$的类名的文件，将APT解析注解的信息转化到group中
             List<String> classFileNames = ClassUtils.getFileNameByPackageName(context, ModuleUtil.NAME_OF_MODULEUNIT);
             for (String className:classFileNames){
                 if (className.startsWith(ModuleUtil.ADDRESS_OF_MODULEUNIT)){
@@ -34,6 +34,7 @@ public class ModuleCenter {
                 }
             }
             Log.i(TAG,"group ="+group.toString());
+            //并对group的模块进行优先级调序
             sortTemplate(group);
 
         }catch (Exception e){
@@ -43,7 +44,6 @@ public class ModuleCenter {
 
     /**
      * 排列Module列表
-     * @param group
      */
     private static void sortTemplate(List<ModuleMeta> group){
         ModuleMeta exitMeta;
@@ -77,11 +77,9 @@ public class ModuleCenter {
         Log.i(TAG,"sortgroup ="+sortgroup.toString());
     }
 
-    private static String[] split(String groupName){
-        return groupName.split(",");
-    }
 
     public static List<String> getModuleList(String templet){
+        //从sortgroup中获取指定module配置
         List<String> list = new ArrayList<>();
         if (sortgroup.containsKey(templet)) {
             for (ModuleMeta meta : sortgroup.get(templet)) {
@@ -93,26 +91,5 @@ public class ModuleCenter {
         Log.i(TAG,"list ="+list.toString());
 
         return list;
-    }
-
-
-
-
-    public static List<ModuleMeta> getMouleList(String templet){
-        if (sortgroup.containsKey(templet)){
-            return sortgroup.get(templet);
-        }
-        return null;
-    }
-
-    public static List<String> getTitleList(String templet){
-        if (sortgroup.containsKey(templet)) {
-            List<String> namelist = new ArrayList<>();
-            for (ModuleMeta meta : sortgroup.get(templet)) {
-                namelist.add(meta.title);
-            }
-            return namelist;
-        }
-        return null;
     }
 }

@@ -15,20 +15,9 @@ import com.cangwang.core.ModuleBus;
 import com.cangwang.core.ModuleEvent;
 import com.cangwang.core.R;
 import com.cangwang.core.cwmodule.CWModuleContext;
-import com.cangwang.core.info.ModuleInfo;
 
 import java.util.List;
 
-//import io.reactivex.Observable;
-//import io.reactivex.android.schedulers.AndroidSchedulers;
-//import io.reactivex.annotations.NonNull;
-//import io.reactivex.functions.Consumer;
-//import io.reactivex.functions.Function;
-//import io.reactivex.schedulers.Schedulers;
-
-/**
- * Created by cangwang on 2017/6/15.
- */
 
 public abstract class ModuleManageExFragment extends Fragment{
 
@@ -67,31 +56,6 @@ public abstract class ModuleManageExFragment extends Fragment{
         sVerticalViews.put(CWModuleContext.PLUGIN_CENTER_VIEW, pluginViewGroup);
         moduleContext.setViewGroups(sVerticalViews);
 
-//        Observable.fromIterable(moduleManager.getModuleNames())
-//                .map(new Function<String, ModuleInfo>() {
-//                    @Override
-//                    public ModuleInfo apply(@NonNull String s){
-//                        return new ModuleInfo(s, CWModuleExFactory.newModuleInstance(s));
-//                    }
-//                })
-////              .delay(10, TimeUnit.MILLISECONDS)
-//                .subscribeOn(Schedulers.io())
-//                .observeOn(AndroidSchedulers.mainThread())
-//                .subscribe(new Consumer<ModuleInfo>() {
-//                    @Override
-//                    public void accept(@NonNull ModuleInfo elAbsModule){
-//                        try {
-//                            if(elAbsModule!=null){
-//                                long before = System.currentTimeMillis();
-//                                elAbsModule.module.init(moduleContext, null);
-//                                Log.d(TAG, "modulename: " + elAbsModule.getClass().getSimpleName() + " init time = " + (System.currentTimeMillis() - before) + "ms");
-//                                moduleManager.putModule(elAbsModule.name, elAbsModule.module);
-//                            }
-//                        }catch (Exception ex){
-//                            Log.e(TAG,ex.toString());
-//                        }
-//                    }
-//                });
         for (final String moduleName:moduleManager.getModuleNames()){
             moduleManager.getPool().execute(new Runnable() {
                 @Override
